@@ -1,0 +1,43 @@
+plugins {
+    id "org.jenkins-ci.jpi" version "0.18.1"
+}
+
+group 'com.epam.reportportal'
+version '0.1-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+apply plugin: 'groovy'
+apply plugin: 'jpi'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+    maven { url 'http://repo.jenkins-ci.org/public/' }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+    testCompile 'junit:junit:4.11'
+}
+
+jenkinsPlugin {
+    coreVersion = "1.593"
+    displayName = "Report Portal"
+    url = ""
+    gitHubUrl = ""
+    shortName = "rp4jenkins"
+    developers {
+        developer {
+            id "dkavalets"
+            name "Dzmitry Kavalets"
+            email "dzmitry_kavalets@epam.com"
+        }
+    }
+}

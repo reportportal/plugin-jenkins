@@ -1,0 +1,4 @@
+<div>
+  This plugin makes it possible to integrate data from <b>ReportPortal</b> into your Jenkins build.<br/>
+  Required parameters are configurable for your private ReportPortal server as well.
+</div>
