@@ -65,11 +65,10 @@ class ResultRecorder extends Recorder {
         try {
             def text = new URL(
                     endpoint
-                    + '/api/v1/'
-                    + project
-                    + '/launch?page.page=1&page.size=50&page.sort=start_time%2CDESC&filter.eq.name='
-                    + URLEncoder.encode(launch, 'UTF-8')
-            )
+                            + '/api/v1/'
+                            + project
+                            + '/launch?page.page=1&page.size=50&page.sort=start_time%2CDESC&filter.eq.name='
+                            + URLEncoder.encode(launch, 'UTF-8'))
                     .getText(requestProperties: ['Authorization': 'bearer ' + token])
             def launchJson = new JsonSlurper().parseText(text)
             def executions = launchJson.content.statistics.executions
@@ -117,14 +116,12 @@ class ResultRecorder extends Recorder {
                 @QueryParameter("launch") String launch,
                 @QueryParameter("token") String token) {
             try {
-                new URL(
-                        endpoint
+                new URL(endpoint
                         + '/api/v1/'
                         + project
                         + '/launch?page.page=1&page.size=50&page.sort=start_time%2CDESC&filter.eq.name='
-                        + URLEncoder.encode(launch, 'UTF-8')
-                )
-                        .getText(requestProperties: ['Authorization': 'bearer ' + token])
+                        + URLEncoder.encode(launch, 'UTF-8'))
+                .getText(requestProperties: ['Authorization': 'bearer ' + token])
                 FormValidation.okWithMarkup('Connection successfully established')
             } catch (Exception e) {
                 FormValidation.error('Something wrong with parameters')
