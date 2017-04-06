@@ -63,7 +63,13 @@ class ResultRecorder extends Recorder {
     @Override
     boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
         try {
-            def text = new URL(endpoint + "/api/v1/" + project + '/launch?page.page=1&page.size=1&page.sort=start_time,DESC&filter.eq.name=' + URLEncoder.encode(this.launch, 'UTF-8')).getText(requestProperties: ['Authorization': 'bearer ' + token])
+            def text = new URL(
+                    endpoint
+                            + '/api/v1/'
+                            + project
+                            + '/launch?page.page=1&page.size=50&page.sort=start_time%2CDESC&filter.eq.name='
+                            + URLEncoder.encode(launch, 'UTF-8'))
+                    .getText(requestProperties: ['Authorization': 'bearer ' + token])
             def launchJson = new JsonSlurper().parseText(text)
             def executions = launchJson.content.statistics.executions
             Launch launch = new Launch().with {
@@ -74,7 +80,7 @@ class ResultRecorder extends Recorder {
                 launchNumber = launchJson.content.number[0] as int
                 status = launchJson.content.status[0]
                 startTime = launchJson.content.start_time[0] as long
-                uiLink = endpoint + "/#" + project + "/launches/all/" + launchJson.content.id[0]
+                uiLink = endpoint + "/#" + project + "/launches/all?page.page=1&page.size=50/" + launchJson.content.id[0]
                 it
             }
             build.addAction(new RPBuildAction(build, launch))
@@ -110,9 +116,12 @@ class ResultRecorder extends Recorder {
                 @QueryParameter("launch") String launch,
                 @QueryParameter("token") String token) {
             try {
-                new URL(endpoint + "/api/v1/" + project + '/launch?page.page=1&page.size=1&page.sort=start_time,DESC&filter.eq.name='
+                new URL(endpoint
+                        + '/api/v1/'
+                        + project
+                        + '/launch?page.page=1&page.size=50&page.sort=start_time%2CDESC&filter.eq.name='
                         + URLEncoder.encode(launch, 'UTF-8'))
-                        .getText(requestProperties: ['Authorization': 'bearer ' + token])
+                .getText(requestProperties: ['Authorization': 'bearer ' + token])
                 FormValidation.okWithMarkup('Connection successfully established')
             } catch (Exception e) {
                 FormValidation.error('Something wrong with parameters')

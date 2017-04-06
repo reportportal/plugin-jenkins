@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.epam.reportportal'
-version '0.1-SNAPSHOT'
+version '0.2-SNAPSHOT'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.2'
@@ -14,8 +14,8 @@ apply plugin: 'groovy'
 apply plugin: 'jpi'
 apply plugin: 'idea'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -28,7 +28,7 @@ dependencies {
 }
 
 jenkinsPlugin {
-    coreVersion = "1.593"
+    coreVersion = "2.46.1"
     displayName = "Report Portal"
     url = ""
     gitHubUrl = ""
