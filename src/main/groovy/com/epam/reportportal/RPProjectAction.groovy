@@ -52,12 +52,12 @@ class RPProjectAction implements RootAction {
 
     @Override
     String getIconFileName() {
-        '/plugin/rp4jenkins/img/RP_ic_100.svg'
+        '/plugin/report-portal/img/RP_ic_100.svg'
     }
 
     @Override
     String getDisplayName() {
-        'Report Portal'
+        'Report Portal Plugin'
     }
 
     @Override

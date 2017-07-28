@@ -27,12 +27,14 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
+description = 'Represents Report Portal statistics and visualization at Jenkins job page'
+
 jenkinsPlugin {
     coreVersion = "2.46.1"
-    displayName = "Report Portal"
+    displayName = "Report Portal Plugin"
     url = ""
     gitHubUrl = ""
-    shortName = "rp4jenkins"
+    shortName = "report-portal"
     developers {
         developer {
             id "dkavalets"
