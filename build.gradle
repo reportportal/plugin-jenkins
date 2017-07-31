@@ -1,5 +1,5 @@
 plugins {
-    id "org.jenkins-ci.jpi" version "0.18.1"
+    id "org.jenkins-ci.jpi" version "0.22.0"
 }
 
 group 'com.epam.reportportal'
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
     testCompile 'junit:junit:4.11'
 }
 
@@ -31,13 +31,13 @@ jenkinsPlugin {
     coreVersion = "2.46.1"
     displayName = "Report Portal"
     url = ""
-    gitHubUrl = ""
-    shortName = "rp4jenkins"
+    gitHubUrl = "https://github.com/reportportal/plugin-jenkins"
+    shortName = "reportportal"
     developers {
         developer {
-            id "dkavalets"
-            name "Dzmitry Kavalets"
-            email "dzmitry_kavalets@epam.com"
+            id "avarabyeu"
+            name "Andrei Varabyeu"
+            email "andrei_varabyeu@epam.com"
         }
     }
 }
