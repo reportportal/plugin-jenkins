@@ -1,6 +1,10 @@
 # plugin-jenkins
 Jenkins CI Plugin - represents statistics and visualization at Jenkins job page
 
+Important Disclaimer: 
+>you don't need to have jenkins plugin for ReportPortal, in order to have results in ReportPortal from tests, executed by Jenkins job. RP adapter connects to test engine (like junit, testNG, nunit, etc.) and fires events, which sends data into RP server. And there is no any difference where you execute results, at local env, remote env, or with jenkins, RP adapter will send data directly into RP server.
+
+>this plugin just shows quick link to corresponding execution result in ReportPortal, and simple trend on chart
 
 ### https://wiki.jenkins.io/display/JENKINS/ReportPortal+Plugin
 
