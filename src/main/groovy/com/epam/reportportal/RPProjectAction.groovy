@@ -20,6 +20,7 @@
  */
 package com.epam.reportportal
 
+import groovy.transform.CompileStatic
 import hudson.model.AbstractProject
 import hudson.model.Result
 import hudson.model.RootAction
@@ -52,7 +53,7 @@ class RPProjectAction implements RootAction {
 
     @Override
     String getIconFileName() {
-        '/plugin/rp4jenkins/img/RP_ic_100.svg'
+        '/plugin/reportportal/img/RP_ic_100.svg'
     }
 
     @Override
