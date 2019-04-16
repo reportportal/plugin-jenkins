@@ -85,7 +85,7 @@ class RPProjectAction implements RootAction {
         }.doPng(req, rsp)
     }
 
-    @groovy.transform.CompileStatic
+    @CompileStatic
     abstract class GraphImpl extends Graph {
         CategoryDataset dataSet
 
