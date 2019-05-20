@@ -34,7 +34,7 @@ class RPBuildAction implements BuildBadgeAction {
 
     @Override
     String getIconFileName() {
-        '/plugin/rp4jenkins/img/RP_ic_100.svg'
+        '/plugin/reportportal/img/RP_ic_100.svg'
     }
 
     @Override

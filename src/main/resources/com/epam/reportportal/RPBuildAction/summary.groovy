@@ -1,6 +1,6 @@
 t = namespace("/lib/hudson")
 
-t.summary(icon: "/plugin/rp4jenkins/img/RP_ic_100.svg") {
+t.summary(icon: "/plugin/reportportal/img/RP_ic_100.svg") {
     a(href: "${my.launch.uiLink}", target: 'blank') {
         text("${my.launch.name}")
     }
