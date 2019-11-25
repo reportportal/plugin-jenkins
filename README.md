@@ -1,3 +1,10 @@
+## ‼ Jenkins plugin obsolete. Team does not support at the moment
+
+- If you want to use ReportPortal with tests which you run via Jenkins - then you don't need this plugin.
+- Plugin was developed only for informational purposes, to show execution statisics
+- Team will not respond to bugs, nor fix it
+- Team has plans to re-work plugin from scratch. When? - no actual dates. During 2020
+
 # plugin-jenkins
 Jenkins CI Plugin - represents statistics and visualization at Jenkins job page
 
